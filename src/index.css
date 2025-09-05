@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary theme colors - Pink/Magenta (#FF3366) */
+  --primary: 343 100% 65%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 198 100% 60%;
+  --secondary-foreground: 0 0% 0%;
+  --accent: 48 100% 50%;
+  --accent-foreground: 0 0% 0%;
+  --festival: 270 100% 60%;
+  --festival-foreground: 0 0% 100%;
+  
+  /* System Colors */
+  --success: 142 72% 29%;
+  --success-foreground: 210 40% 98%;
+  --success-muted: 142 72% 90%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 48 96% 98%;
+  --warning-muted: 38 92% 90%;
+  --error: 0 84% 60%;
+  --error-foreground: 210 40% 98%;
+  --error-muted: 0 84% 90%;
+  --info: 198 100% 60%;
+  --info-foreground: 0 0% 0%;
+  --info-muted: 198 100% 90%;
+  
+  /* Surface Colors */
+  --surface: 0 0% 100%;
+  --surface-foreground: 240 10% 15%;
+  --surface-muted: 240 20% 96%;
+  --background: 0 0% 100%;
+  --foreground: 240 10% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 15%;
+  --muted: 240 20% 96%;
+  --muted-foreground: 240 10% 45%;
+  
+  /* Color scales - Primary (Pink/Magenta) */
+  --primary-50: 343 100% 98%;
+  --primary-100: 343 100% 94%;
+  --primary-200: 343 95% 90%;
+  --primary-300: 343 90% 80%;
+  --primary-400: 343 90% 70%;
+  --primary-500: 343 100% 65%;
+  --primary-600: 343 85% 55%;
+  --primary-700: 343 80% 45%;
+  --primary-800: 343 75% 35%;
+  --primary-900: 343 70% 25%;
+  
+  /* Color scales - Secondary (Blue) */
+  --secondary-50: 198 100% 95%;
+  --secondary-100: 198 100% 90%;
+  --secondary-200: 198 100% 80%;
+  --secondary-300: 198 100% 70%;
+  --secondary-400: 198 100% 65%;
+  --secondary-500: 198 100% 60%;
+  --secondary-600: 198 100% 50%;
+  --secondary-700: 198 90% 40%;
+  --secondary-800: 198 80% 30%;
+  --secondary-900: 198 70% 25%;
+  
+  /* Color scales - Accent (Yellow) */
+  --accent-50: 48 100% 97%;
+  --accent-100: 48 100% 92%;
+  --accent-200: 48 100% 85%;
+  --accent-300: 48 100% 75%;
+  --accent-400: 48 100% 65%;
+  --accent-500: 48 100% 55%;
+  --accent-600: 48 90% 50%;
+  --accent-700: 48 85% 40%;
+  --accent-800: 48 80% 30%;
+  --accent-900: 48 75% 25%;
+  
+  /* Color scales - Festival (Purple) */
+  --festival-50: 270 100% 97%;
+  --festival-100: 270 100% 92%;
+  --festival-200: 270 100% 85%;
+  --festival-300: 270 100% 75%;
+  --festival-400: 270 100% 65%;
+  --festival-500: 270 100% 60%;
+  --festival-600: 270 90% 50%;
+  --festival-700: 270 85% 40%;
+  --festival-800: 270 80% 30%;
+  --festival-900: 270 75% 25%;
+  
+  /* System Variables */
+  --border: 240 30% 92%;
+  --input: var(--border);
+  --ring: var(--primary);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 240 50% 8%;
+  --foreground: 240 10% 95%;
+  --card: 240 50% 10%;
+  --card-foreground: 240 10% 95%;
+  --popover: 240 50% 10%;
+  --popover-foreground: 240 10% 95%;
+  --primary: 343 90% 70%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 198 90% 65%;
+  --secondary-foreground: 0 0% 0%;
+  --muted: 240 40% 20%;
+  --muted-foreground: 240 30% 70%;
+  --accent: 48 90% 65%;
+  --accent-foreground: 0 0% 0%;
+  --festival: 270 90% 65%;
+  --festival-foreground: 0 0% 100%;
+  --border: 240 40% 25%;
+  --input: 240 40% 25%;
+  --ring: 343 90% 70%;
+  --success: 142 72% 50%;
+  --warning: 38 92% 60%;
+  --error: 0 84% 70%;
+  --info: 198 100% 65%;
+}
+
+@layer components {
+  .festival-button {
+    @apply bg-primary text-primary-foreground font-bold px-6 py-3 rounded-md hover:bg-primary-600 transition-colors duration-300;
+  }
+  
+  .festival-button-secondary {
+    @apply bg-secondary text-secondary-foreground font-bold px-6 py-3 rounded-md hover:bg-secondary-600 transition-colors duration-300;
+  }
+  
+  .festival-button-accent {
+    @apply bg-accent text-accent-foreground font-bold px-6 py-3 rounded-md hover:bg-accent-600 transition-colors duration-300;
+  }
+  
+  .festival-card {
+    @apply bg-card text-card-foreground rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .festival-artist-card {
+    @apply bg-card text-card-foreground rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .festival-countdown-item {
+    @apply bg-primary/10 text-primary-foreground rounded-lg p-4 flex flex-col items-center justify-center;
+  }
+  
+  .festival-countdown-number {
+    @apply text-4xl font-bold text-primary;
+  }
+  
+  .festival-countdown-label {
+    @apply text-sm text-foreground/80;
+  }
+  
+  .festival-tab {
+    @apply px-4 py-2 font-medium border-b-2 border-transparent hover:border-primary/50 hover:text-primary transition-colors duration-200;
+  }
+  
+  .festival-tab-active {
+    @apply px-4 py-2 font-medium border-b-2 border-primary text-primary;
+  }
+  
+  .festival-schedule-time {
+    @apply text-sm font-mono text-muted-foreground;
+  }
+  
+  .festival-schedule-artist {
+    @apply text-lg font-bold text-foreground;
+  }
+  
+  .festival-schedule-stage {
+    @apply text-sm font-medium text-secondary;
+  }
+  
+  .festival-ticket-tier {
+    @apply border border-border rounded-lg p-6 hover:border-primary transition-colors duration-200;
+  }
+  
+  .festival-ticket-tier-featured {
+    @apply border-2 border-primary bg-primary/5 rounded-lg p-6;
+  }
+  
+  .festival-ticket-price {
+    @apply text-3xl font-bold text-foreground;
+  }
+  
+  .festival-ticket-name {
+    @apply text-xl font-bold text-foreground mb-2;
+  }
+  
+  .festival-heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-foreground;
+  }
+  
+  .festival-heading-lg {
+    @apply text-3xl md:text-4xl font-bold text-foreground;
+  }
+  
+  .festival-heading-md {
+    @apply text-2xl md:text-3xl font-bold text-foreground;
+  }
+  
+  .festival-heading-sm {
+    @apply text-xl md:text-2xl font-bold text-foreground;
+  }
+  
+  .festival-section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+  }
+  
+  .text-glow-blue {
+    text-shadow: 0 0 10px rgba(51, 204, 255, 0.5);
+  }
+  
+  .text-glow-yellow {
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+  }
+  
+  .text-glow-purple {
+    text-shadow: 0 0 10px rgba(153, 51, 255, 0.5);
+  }
+  
+  .bg-gradient-festival {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--festival)) 100%);
+  }
+  
+  .bg-gradient-stage {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--accent)) 100%);
+  }
+}
